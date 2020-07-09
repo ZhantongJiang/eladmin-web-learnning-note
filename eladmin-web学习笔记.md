@@ -343,7 +343,7 @@ require.context(directory, useSubdirectories, RegExp, mode)
 
    * **使用模块作用域保持不允许外部访问的函数的私有性。如果无法做到这一点，就始终为插件、混入等不考虑作为对外公共 API 的自定义私有 property 使用 `$_` 前缀。并附带一个命名空间以回避和其它作者的冲突 (比如 `$_yourPluginName_`)**
 
-     > [官方Vue代码风格指南]([https://cn.vuejs.org/v2/style-guide/index.html#%E8%A7%84%E5%88%99%E5%BD%92%E7%B1%BB](https://cn.vuejs.org/v2/style-guide/index.html#规则归类)) 可作为代码书写规格的标准 √
+     > [官方Vue代码风格指南](https://cn.vuejs.org/v2/style-guide/index.html#%E8%A7%84%E5%88%99%E5%BD%92%E7%B1%B) 可作为代码书写规格的标准 √
 
 5. [document.hidden](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/hidden)
 
