@@ -27,6 +27,9 @@
 * [5. 功能模块](#5)
   * [5.1 登录登出](#5.1)
   * [5.2 layout](#5.2)
+  * [5.3 首页 dashboard](#5.3)
+  * [5.4 增删改查的封装](#5.4)
+  * [5.5 系统管理 system](#5.5)
 * [6. css](#6)
   * [6.1 svg图标的使用](#6.1)
   * [6.2 bootstrap responsive web design](#6.2)
@@ -391,6 +394,70 @@ require.context(directory, useSubdirectories, RegExp, mode)
 
 
 
+<h3 id="5.3">首页 dashboard</h3>
+
+#### mixin
+
+1. [transitionend](https://developer.mozilla.org/zh-CN/docs/Web/Events/transitionend)
+
+   其中事件参数event为[TransitionEvent](https://developer.mozilla.org/zh-CN/docs/Web/API/TransitionEvent)
+
+   项目中当transition监听的属性为width时触发，即菜单栏收缩或展开时触发
+
+#### echarts
+
+注意在组件销毁的同时销毁图表
+
+```javascript
+beforeDestroy() {
+    if (!this.chart) {
+      return
+    }
+    this.chart.dispose()
+    this.chart = null
+}
+```
+
+
+
+
+
+
+
+<h3 id="5.4">
+    增删改查的封装
+</h3>
+
+#### crud
+
+1. [Vue.observable( object )](https://cn.vuejs.org/v2/api/#Vue-observable)
+
+   使一个对象可响应
+
+   在Vue2.x中入参的object与方法返回的对象是同一个，但在Vue3.x中返回的对象具有拦截器属性，所以推荐使用**返回的对象**而不是源数据
+
+2. 待
+
+
+
+
+
+
+
+
+
+<h3 id="5.5">
+    系统管理 system
+</h3>
+
+
+
+
+
+
+
+
+
 <h2 id="6">
   css
 </h2>
@@ -407,7 +474,7 @@ require.context(directory, useSubdirectories, RegExp, mode)
 
 <h3 id="6.2">bootstrap responsive web design</h3>
 
-[Bootstrap响应式设计参考](./bootstrap 4 responsive web design@www.java1234.com.pdf)
+[Bootstrap响应式设计参考]([https://github.com/ZhantongJiang/eladmin-web-learnning-note/blob/master/bootstrap%204%20responsive%20web%20design%40www.java1234.com.pdf](https://github.com/ZhantongJiang/eladmin-web-learnning-note/blob/master/bootstrap 4 responsive web design%40www.java1234.com.pdf))
 
 
 
@@ -419,3 +486,4 @@ require.context(directory, useSubdirectories, RegExp, mode)
 
 1. 在非首页的标签页设置布局，回跳到404页面，crud报错
 2. navbar搜索框的选项没有过滤有子菜单的菜单，因没有匹配路由的页面，导致选中时跳转至404 
+3. utils/validate.js isvalidPhone校验手机号方式已过期
