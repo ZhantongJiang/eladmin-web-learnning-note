@@ -342,7 +342,7 @@ require.context(directory, useSubdirectories, RegExp, mode)
 
    * 同名钩子函数将合并为一个数组，因此都将被调用，混入对象的钩子将在组件自身钩子**之前**调用
 
-   * 值为对象的选项，例如 `methods`、`components` 和 `directives`，将被合并为同一个对象。两个对象键名冲突时，取组件对象的键值对
+     * 值为对象的选项，例如 `methods`、`components` 和 `directives`，将被合并为同一个对象。两个对象键名冲突时，取组件对象的键值对
 
    * **使用模块作用域保持不允许外部访问的函数的私有性。如果无法做到这一点，就始终为插件、混入等不考虑作为对外公共 API 的自定义私有 property 使用 `$_` 前缀。并附带一个命名空间以回避和其它作者的冲突 (比如 `$_yourPluginName_`)**
 
